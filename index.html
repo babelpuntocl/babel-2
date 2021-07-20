@@ -11,14 +11,15 @@
     <script src="https://unpkg.com/hydra-synth"></script>
   </head>
   <body>
+	  <p id="correo-index"><a href="mailto:hola@babel.cl">hola@babel.cl</a></p>
     <script>
       // create a new hydra-synth instance @nnvenegas
       var hydra = new Hydra({
         canvas: document.getElementById("myCanvas"),
         detectAudio: false
       })
-      osc(24, 0.05, 3).color(-2, 0.9, -0.9).mult(osc(20, 0.01, 2)).rotate(Math.PI).modulate(o1,0.3).scale(2).diff(o1).out(o0)
-      osc(-20, 0.05, -2).color(2, 0.7, 0.1).scale(200).mult(osc(2)).modulateRotate(o0, 0.4).out(o1)
+      osc(12, 0.03, 3).color(-2, 0.9, -0.9).mult(osc(20, 0.01, 2)).rotate(Math.PI).modulate(o1,0.3).scale(2).diff(o1).out(o0)
+      osc(-20, 0.03, -2).color(2, 0.7, 0.1).scale(200).mult(osc(2)).modulateRotate(o0, 0.4).out(o1)
     </script>
   </body>
 </html>
