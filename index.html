@@ -6,91 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- import the webpage's stylesheet -->
-    <style>
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-	overflow: hidden;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-canvas{
-	min-height: 100%;
-	width: auto !important;
-}
-</style>
+    <link rel="stylesheet" href="style.css">
     <!-- import the latest version of hydra synth-->
     <script src="https://unpkg.com/hydra-synth"></script>
   </head>
   <body>
- 
     <script>
-      // create a new hydra-synth instance
+      // create a new hydra-synth instance @nnvenegas
       var hydra = new Hydra({
         canvas: document.getElementById("myCanvas"),
         detectAudio: false
       })
-       
-osc(18, 0.1, 0)
-  .color(-2, 0.9, -2)
-  .mult(osc(20, 0.01, 0))
-  .repeat(2, 20)
-  .rotate(0.1)
-  .modulate(o1)
-  .scale(1)
-  .diff(o1)
-.out(o0)
-osc(-20, 0.1, -2)
-  .color(2, 0.7, 0.1)
-  .mult(osc(40))
-  .modulateRotate(o0, 0.2)
-  .rotate(0.5)
-.out(o1)
-
-
+      osc(24, 0.05, 3).color(-2, 0.9, -0.9).mult(osc(20, 0.01, 2)).rotate(Math.PI).modulate(o1,0.3).scale(2).diff(o1).out(o0)
+      osc(-20, 0.05, -2).color(2, 0.7, 0.1).scale(200).mult(osc(2)).modulateRotate(o0, 0.4).out(o1)
     </script>
-
   </body>
 </html>
